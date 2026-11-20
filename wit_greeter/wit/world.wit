@@ -1,0 +1,49 @@
+package demo:greeter@0.1.0;
+
+interface logger {
+  enum level {
+    info,
+    warn,
+    error,
+  }
+
+  log: func(lvl: level, msg: string);
+}
+
+interface types {
+  flags perms {
+    read,
+    write,
+  }
+
+  record meta {
+    id: u64,
+    perms: perms,
+  }
+}
+
+interface api {
+  use types.{meta};
+
+  record user {
+    name: string,
+    age: u32,
+    tags: list<string>,
+    nickname: option<string>,
+    meta: meta,
+  }
+
+  variant greeting-error {
+    empty-name,
+    too-young(u32),
+  }
+
+  greet: func(u: user) -> result<string, greeting-error>;
+  sum-bytes: func(data: list<u8>) -> u64;
+}
+
+world greeter {
+  import logger;
+  export api;
+  export ping: func(x: s32) -> s32;
+}

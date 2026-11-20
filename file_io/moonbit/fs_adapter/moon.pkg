@@ -1,0 +1,4 @@
+import {
+  "file_io/gprelude" @gprelude,
+  "moonbitlang/x/fs" @moonbitlang_x_fs,
+}

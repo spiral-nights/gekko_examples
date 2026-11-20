@@ -1,0 +1,5 @@
+name = "wit_greeter"
+version = "0.1.0"
+
+[dependencies]
+gleam_stdlib = { git = "https://github.com/spiral-nights/gleam_stdlib.git", ref = "main" }

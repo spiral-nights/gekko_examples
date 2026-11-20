@@ -1,0 +1,2 @@
+Hello from Gleam + MoonBit file I/O!
+Line 2: powered by moonbitlang/x/fs via moonbit/moon.mod
