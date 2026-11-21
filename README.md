@@ -19,3 +19,17 @@ Each example directory includes its own `README.md` with setup, generation comma
 | **WIT Greeter** | Wasm Component (`wit/world.wit`, `gekko wit gen`, `wit check`, `wit build`) | [`wit_greeter/README.md`](./wit_greeter/README.md) |
 | **MoonBit FFI** | Local `moonbit/` packages, `moonbitlang/core/math`, and `@external_type` | [`moonbit_ffi/README.md`](./moonbit_ffi/README.md) |
 | **File I/O** | Reading/writing files via `moonbit/moon.mod` (`moonbitlang/x/fs`) + `gekko moonbit bind` | [`file_io/README.md`](./file_io/README.md) |
+
+## Verification
+
+Run the end-to-end verification script across all five examples:
+
+```sh
+./scripts/test_all.sh
+```
+
+To test against a specific `gekko` binary (for example, an uninstalled build):
+
+```sh
+GEKKO=/path/to/gekko ./scripts/test_all.sh
+```
