@@ -1,4 +1,4 @@
-# `gleam_tour` Example
+# `orbital_station` Example
 
 An original Orbital Station Simulator written in pure Gleam to exercise Gleam's language features—primitives, closures, pipelines, pattern matching, tail-recursive loops, custom types, record updates, opaque types, and standard library modules—compiled through `gekko` to MoonBit.
 
@@ -12,10 +12,10 @@ An original Orbital Station Simulator written in pure Gleam to exercise Gleam's 
 ## Project Layout
 
 ```text
-gleam_tour/
+orbital_station/
 ├── gleam.toml                       # Declares gleam_stdlib and gleam_json dependencies
 └── src/
-    ├── gleam_tour.gleam             # Entrypoint (`main`)
+    ├── orbital_station.gleam        # Entrypoint (`main`)
     └── station/
         ├── commands.gleam
         ├── manifest.gleam
@@ -29,10 +29,10 @@ No FFI, adapters, or code generation steps were required. This is a pure Gleam p
 
 ## How to Run
 
-First ensure dependencies (`gleam_stdlib`, `gleam_json`) are downloaded (run inside `gleam_tour` once if needed):
+First ensure dependencies (`gleam_stdlib`, `gleam_json`) are downloaded (run inside `orbital_station` once if needed):
 
 ```bash
-cd gleam_tour
+cd orbital_station
 gleam deps download
 cd ..
 ```
@@ -41,9 +41,9 @@ Then type-check and run via `gekko`:
 
 ```bash
 # Type-check the transpiled MoonBit workspace
-gekko check --root gleam_tour
+gekko check --root orbital_station
 
 # Run targeting linear-memory WebAssembly or JavaScript
-gekko run --root gleam_tour --target wasm
-gekko run --root gleam_tour --target js
+gekko run --root orbital_station --target wasm
+gekko run --root orbital_station --target js
 ```

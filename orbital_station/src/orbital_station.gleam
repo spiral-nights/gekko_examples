@@ -5,7 +5,7 @@ import station/navigation
 import station/telemetry
 
 pub fn main() -> Nil {
-  io.println("=== Orbital Station Simulator (gleam_tour) ===")
+  io.println("=== Orbital Station Simulator (orbital_station) ===")
   telemetry.run()
   commands.run()
   navigation.run()

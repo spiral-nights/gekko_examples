@@ -39,19 +39,19 @@ for target in wasm js; do
   assert_contains "$out" "Beverly Hills, CA: Temp 57.9 °F | Wind 11.9 mp/h | Humidity 32% | Condition: Clear sky" "weather_app ($target)"
 done
 
-echo "=== Verifying gleam_tour ==="
-ensure_deps "gleam_tour"
-"$GEKKO" check --root "$ROOT/gleam_tour" --out "$TMP_DIR/gleam_tour" --target wasm
-(cd "$TMP_DIR/gleam_tour" && moon check --deny-warn --target wasm)
+echo "=== Verifying orbital_station ==="
+ensure_deps "orbital_station"
+"$GEKKO" check --root "$ROOT/orbital_station" --out "$TMP_DIR/orbital_station" --target wasm
+(cd "$TMP_DIR/orbital_station" && moon check --deny-warn --target wasm)
 for target in wasm js; do
-  out="$("$GEKKO" run --root "$ROOT/gleam_tour" --out "$TMP_DIR/gleam_tour" --target "$target")"
-  assert_contains "$out" "=== Orbital Station Simulator (gleam_tour) ===" "gleam_tour ($target)"
-  assert_contains "$out" "[Station Telemetry]" "gleam_tour ($target)"
-  assert_contains "$out" "[Station Commands]" "gleam_tour ($target)"
-  assert_contains "$out" "[Station Navigation]" "gleam_tour ($target)"
-  assert_contains "$out" "[Station Manifest]" "gleam_tour ($target)"
-  assert_contains "$out" "=== All station checks passed ===" "gleam_tour ($target)"
-  assert_contains "$out" "src/station/manifest.gleam:" "gleam_tour ($target)"
+  out="$("$GEKKO" run --root "$ROOT/orbital_station" --out "$TMP_DIR/orbital_station" --target "$target")"
+  assert_contains "$out" "=== Orbital Station Simulator (orbital_station) ===" "orbital_station ($target)"
+  assert_contains "$out" "[Station Telemetry]" "orbital_station ($target)"
+  assert_contains "$out" "[Station Commands]" "orbital_station ($target)"
+  assert_contains "$out" "[Station Navigation]" "orbital_station ($target)"
+  assert_contains "$out" "[Station Manifest]" "orbital_station ($target)"
+  assert_contains "$out" "=== All station checks passed ===" "orbital_station ($target)"
+  assert_contains "$out" "src/station/manifest.gleam:" "orbital_station ($target)"
 done
 
 echo "=== Verifying moonbit_ffi ==="
