@@ -18,24 +18,3 @@ pub fn sum_squares(xs : @gprelude.GList[Int64]) -> Int64 {
     }
   }
 }
-
-///|
-pub struct Counter {
-  mut value : Int64
-}
-
-///|
-pub fn new_counter(start : Int64) -> Counter {
-  { value: start }
-}
-
-///|
-pub fn increment_counter(c : Counter, delta : Int64) -> Unit {
-  c.value = c.value + delta
-}
-
-///|
-pub fn read_counter(c : Counter) -> Int64 {
-  c.value
-}
-

@@ -1,4 +1,0 @@
-import {
-  "moonbit_ffi/gprelude" @gprelude,
-  "moonbitlang/core/buffer" @buffer,
-}

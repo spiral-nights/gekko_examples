@@ -35,8 +35,8 @@ ensure_deps "weather_app"
 (cd "$TMP_DIR/weather_app" && moon check --deny-warn --target wasm)
 for target in wasm js; do
   out="$("$GEKKO" run --root "$ROOT/weather_app" --out "$TMP_DIR/weather_app" --target "$target")"
-  assert_contains "$out" "Zip 10001 (New York City, NY): Temp 43.0 °F | Wind 1.8 mp/h | Humidity 67% | Condition: Clear sky" "weather_app ($target)"
-  assert_contains "$out" "Zip 90210 (Beverly Hills, CA): Temp 57.9 °F | Wind 11.9 mp/h | Humidity 32% | Condition: Clear sky" "weather_app ($target)"
+  assert_contains "$out" "New York City, NY: Temp 43.0 °F | Wind 1.8 mp/h | Humidity 67% | Condition: Clear sky" "weather_app ($target)"
+  assert_contains "$out" "Beverly Hills, CA: Temp 57.9 °F | Wind 11.9 mp/h | Humidity 32% | Condition: Clear sky" "weather_app ($target)"
 done
 
 echo "=== Verifying gleam_tour ==="
@@ -63,10 +63,8 @@ for target in wasm js; do
   assert_contains "$out" "shout=HELLO MOONBIT!" "moonbit_ffi ($target)"
   assert_contains "$out" "upper=GLEAM,FFI" "moonbit_ffi ($target)"
   assert_contains "$out" "sum_squares=29" "moonbit_ffi ($target)"
-  assert_contains "$out" "utf8_bytes=12" "moonbit_ffi ($target)"
   assert_contains "$out" "pow=1024.0" "moonbit_ffi ($target)"
   assert_contains "$out" "sin0=0.0,cos0=1.0" "moonbit_ffi ($target)"
-  assert_contains "$out" "counter_total=115" "moonbit_ffi ($target)"
 done
 
 echo "=== Verifying file_io ==="

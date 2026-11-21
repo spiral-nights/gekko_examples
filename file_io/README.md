@@ -56,16 +56,20 @@ gleam deps download
 cd ..
 ```
 
-Next transpile and check the MoonBit workspace, copy `sample.txt` into the generated workspace directory so the Wasm/JS process sees it in its working directory, and run:
+Next transpile and check the MoonBit workspace, or build/run on your target:
 
 ```bash
-# Type-check the transpiled MoonBit workspace (generates file_io/build/moonbit/)
-gekko check --root file_io
+# Type-check the transpiled MoonBit workspace (generates build/moonbit/)
+gekko check
 
-# Stage the input file in the MoonBit workspace cwd
-cp file_io/sample.txt file_io/build/moonbit/sample.txt
+# Option 1: Build and run standalone binaries on native or JS
+gekko build --target native && ./file_io.exe
+gekko build --target js && node file_io.js
 
-# Run on Wasm or JS
-gekko run --root file_io --target wasm
-gekko run --root file_io --target js
+# Option 2: Run via gekko run (uses MoonBit's `moonrun` V8/Wasm runner on wasm)
+cp sample.txt build/moonbit/sample.txt
+gekko run --target wasm
+gekko run --target js
 ```
+
+> **Note on Wasm hosts:** `moonbitlang/x/fs` implements Wasm file I/O against `moonrun`'s `__moonbit_fs_unstable` host imports rather than standard `wasi_snapshot_preview1`, so `.wasm` binaries using `moonbitlang/x/fs` must be run with `moonrun` (`gekko run --target wasm` or `moonrun file_io.wasm`) rather than `wasmtime`. Use `native` or `js` for standalone execution outside `moonrun`.
