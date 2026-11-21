@@ -39,12 +39,12 @@ No `gekko moonbit bind` generation step was used here—this example shows how t
 
 ## How to Run
 
-First download Hex dependencies if `build/packages/` is not already populated:
+First download dependencies if `build/packages/` is not already populated:
 
 ```bash
 cd moonbit_ffi
 gleam deps download
-cd ../..
+cd ..
 ```
 
 Then type-check and run via `gekko`:

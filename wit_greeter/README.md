@@ -39,7 +39,7 @@ wit_greeter/
 
 ## How to Check & Build the Component
 
-Ensure `wit-bindgen`, `wasm-tools`, and Hex dependencies are available (`cd wit_greeter && gleam deps download` if needed):
+Ensure `wit-bindgen`, `wasm-tools`, and Gleam dependencies are available (`cd wit_greeter && gleam deps download` if needed):
 
 ```bash
 # Type-check the bridged MoonBit + wit-bindgen workspace

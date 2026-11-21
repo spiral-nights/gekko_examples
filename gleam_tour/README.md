@@ -25,16 +25,16 @@ gleam_tour/
 
 ## How It Was Created
 
-No FFI, adapters, or code generation steps were required. This is a pure Gleam project written with standard `gleam` conventions and `gleam.toml` Hex dependencies; `gekko` transpiles both the modules under `src/` and the resolved dependencies under `build/packages/` directly into a MoonBit workspace.
+No FFI, adapters, or code generation steps were required. This is a pure Gleam project written with standard `gleam` conventions and `gleam.toml` dependencies (using the MoonBit-enabled `gleam_stdlib` and `gleam_json` forks); `gekko` transpiles both the modules under `src/` and the resolved dependencies under `build/packages/` directly into a MoonBit workspace.
 
 ## How to Run
 
-First ensure Hex dependencies (`gleam_stdlib`, `gleam_json`) are present (run inside `gleam_tour` once if needed):
+First ensure dependencies (`gleam_stdlib`, `gleam_json`) are downloaded (run inside `gleam_tour` once if needed):
 
 ```bash
 cd gleam_tour
 gleam deps download
-cd ../..
+cd ..
 ```
 
 Then type-check and run via `gekko`:

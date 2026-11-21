@@ -48,12 +48,12 @@ file_io/
 
 ## How to Run
 
-First download Hex dependencies if `build/packages/` is not already populated:
+First download dependencies if `build/packages/` is not already populated:
 
 ```bash
 cd file_io
 gleam deps download
-cd ../..
+cd ..
 ```
 
 Next transpile and check the MoonBit workspace, copy `sample.txt` into the generated workspace directory so the Wasm/JS process sees it in its working directory, and run:
