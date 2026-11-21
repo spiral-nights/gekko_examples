@@ -107,4 +107,19 @@ if command -v wasm-tools >/dev/null 2>&1; then
   test -f "$TMP_DIR/greeter.wasm"
 fi
 
-echo "All 5 gekko examples passed."
+echo "=== Verifying fibonacci_cli ==="
+ensure_deps "fibonacci_cli"
+"$GEKKO" check --root "$ROOT/fibonacci_cli" --out "$TMP_DIR/fibonacci_cli" --target wasm
+(cd "$TMP_DIR/fibonacci_cli" && moon check --deny-warn --target wasm)
+for target in wasm js; do
+  out="$("$GEKKO" run --root "$ROOT/fibonacci_cli" --out "$TMP_DIR/fibonacci_cli" --target "$target")"
+  assert_contains "$out" "fib(10) = 55" "fibonacci_cli ($target)"
+  assert_contains "$out" "fib(20) = 6765" "fibonacci_cli ($target)"
+done
+"$GEKKO" build --root "$ROOT/fibonacci_cli" --target native --out "$TMP_DIR/fibonacci_cli.exe"
+native_out="$("$TMP_DIR/fibonacci_cli.exe" 10 20 50)"
+assert_contains "$native_out" "fib(10) = 55" "fibonacci_cli (native cli)"
+assert_contains "$native_out" "fib(20) = 6765" "fibonacci_cli (native cli)"
+assert_contains "$native_out" "fib(50) = 12586269025" "fibonacci_cli (native cli)"
+
+echo "All 6 gekko examples passed."
