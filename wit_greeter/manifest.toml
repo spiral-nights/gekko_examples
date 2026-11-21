@@ -7,8 +7,8 @@
 # You should check this file into your source control repository.
 
 packages = [
-  { name = "gleam_stdlib", version = "1.1.0", build_tools = ["gleam"], requirements = [], source = "git", repo = "https://github.com/spiral-nights/gleam_stdlib.git", commit = "74612859db97cd98ce55a50b7fd4a9559d756528" },
+  { name = "gleam_stdlib", version = "1.1.0", build_tools = ["gleam"], requirements = [], source = "git", repo = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", commit = "23ae267234e46059af81ac502b77b24d07933d66" },
 ]
 
 [requirements]
-gleam_stdlib = { git = "https://github.com/spiral-nights/gleam_stdlib.git", ref = "main" }
+gleam_stdlib = { git = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", ref = "main" }

@@ -2,4 +2,4 @@ name = "file_io"
 version = "0.1.0"
 
 [dependencies]
-gleam_stdlib = { git = "https://github.com/spiral-nights/gleam_stdlib.git", ref = "main" }
+gleam_stdlib = { git = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", ref = "main" }

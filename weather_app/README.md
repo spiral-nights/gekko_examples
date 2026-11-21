@@ -7,7 +7,7 @@ An end-to-end JSON decoding and report-formatting application written in pure Gl
 - Structured JSON decoding using `gleam/json` and `gleam/dynamic/decode` (`parse_zip_lookup`, `parse_forecast`).
 - Decoding into nested Gleam custom types (`ZipLookup`, `Place`, `ForecastResponse`, `CurrentUnits`, `CurrentWeather`).
 - Chaining fallible operations cleanly with `use ... <- result.try(...)`.
-- Transpiles the MoonBit-enabled [`gleam_stdlib`](https://github.com/spiral-nights/gleam_stdlib) and [`gleam_json`](https://github.com/spiral-nights/gleam_json) forks directly, using their bundled `moonbit/` FFI packages (`gleam_stdlib_ffi` and `gleam_json_ffi`).
+- Transpiles the MoonBit-enabled [`gleam_stdlib`](https://github.com/spiral-nights/gekko_gleam_stdlib) and [`gleam_json`](https://github.com/spiral-nights/gekko_gleam_json) forks directly, using their bundled `moonbit/` FFI packages (`gleam_stdlib_ffi` and `gleam_json_ffi`).
 
 ## Project Layout
 
