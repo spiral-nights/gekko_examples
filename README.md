@@ -5,7 +5,7 @@ Standalone example projects demonstrating [`gekko`](https://github.com/spiral-ni
 ## Prerequisites
 
 - **Gleam**: `1.19.x` (verified with `gleam 1.19.2`)
-- **MoonBit**: `moon` toolchain (`wasm-gc`, `wasm`, `js`, `native`)
+- **MoonBit**: `moon >= 0.1.20261104` / `moonc >= 0.10.20` (verified with `moon 0.1.20261119` / `moonc v0.10.22`; `wasm-gc`, `wasm`, `js`, `native`)
 - **`gekko`**: installed or built from the `gekko` repository
 
 ## Examples
