@@ -103,6 +103,12 @@ ensure_deps "wit_greeter"
 if command -v wasm-tools >/dev/null 2>&1; then
   "$GEKKO" wit build --root "$ROOT/wit_greeter" --out "$TMP_DIR/wit_greeter" --output "$TMP_DIR/greeter.wasm"
   test -f "$TMP_DIR/greeter.wasm"
+  if command -v wasmtime >/dev/null 2>&1; then
+    wit_out_title="$(wasmtime run --invoke 'greet({name: "Ada", title: some("Dr.")})' "$TMP_DIR/greeter.wasm")"
+    assert_contains "$wit_out_title" "Hello, Dr. Ada! (unix time: " "wit_greeter (wasmtime with title)"
+    wit_out_plain="$(wasmtime run --invoke 'greet({name: "Grace", title: none})' "$TMP_DIR/greeter.wasm")"
+    assert_contains "$wit_out_plain" "Hello, Grace! (unix time: " "wit_greeter (wasmtime without title)"
+  fi
 fi
 
 echo "=== Verifying fibonacci_cli ==="

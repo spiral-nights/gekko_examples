@@ -16,7 +16,7 @@ Each example directory includes its own `README.md` with setup, generation comma
 | --- | --- | --- |
 | **Orbital Station** | Pure Gleam language tour (basics, TCO loops, records, `echo`, stdlib) | [`orbital_station/README.md`](./orbital_station/README.md) |
 | **Weather App** | `gleam/json` & `gleam/dynamic/decode` with custom forecast records | [`weather_app/README.md`](./weather_app/README.md) |
-| **WIT Greeter** | Minimal Wasm Component (`wit/world.wit`, `gekko wit gen`, `wit check`, `wit build`) | [`wit_greeter/README.md`](./wit_greeter/README.md) |
+| **WIT Greeter** | Minimal Wasm Component importing `wasi:clocks/wall-clock` and running under `wasmtime` | [`wit_greeter/README.md`](./wit_greeter/README.md) |
 | **MoonBit FFI** | Local `moonbit/` package and `moonbitlang/core/math` via `@external` | [`moonbit_ffi/README.md`](./moonbit_ffi/README.md) |
 | **File I/O** | Reading/writing files via `moonbit/moon.mod` (`moonbitlang/x/fs`) + `gekko moonbit bind` | [`file_io/README.md`](./file_io/README.md) |
 | **Fibonacci CLI** | Reading CLI arguments via `moonbitlang/core/env` + native `gekko build --target native` | [`fibonacci_cli/README.md`](./fibonacci_cli/README.md) |
