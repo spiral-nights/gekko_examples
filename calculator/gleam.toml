@@ -1,0 +1,6 @@
+name = "calculator"
+version = "0.1.0"
+
+[dependencies]
+gleam_stdlib = { git = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", ref = "main" }
+party = ">= 1.0.0 and < 2.0.0"

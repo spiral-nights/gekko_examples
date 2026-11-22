@@ -126,4 +126,24 @@ assert_contains "$native_out" "fib(10) = 55" "fibonacci_cli (native cli)"
 assert_contains "$native_out" "fib(20) = 6765" "fibonacci_cli (native cli)"
 assert_contains "$native_out" "fib(50) = 12586269025" "fibonacci_cli (native cli)"
 
-echo "All 6 gekko examples passed."
+echo "=== Verifying calculator ==="
+ensure_deps "calculator"
+(cd "$ROOT/calculator" && gleam format --check src test && gleam check)
+"$GEKKO" check --root "$ROOT/calculator" --out "$TMP_DIR/calculator" --target wasm
+(cd "$TMP_DIR/calculator" && moon check --deny-warn --target wasm)
+"$GEKKO" test --root "$ROOT/calculator" --out "$TMP_DIR/calculator_test_out" --target wasm
+for target in wasm js; do
+  out="$("$GEKKO" run --root "$ROOT/calculator" --out "$TMP_DIR/calculator" --target "$target")"
+  assert_contains "$out" "hypot(3, 4)  =>  = 5.0" "calculator ($target)"
+  assert_contains "$out" "avg(10, 20, 30, 40)  =>  = 25.0" "calculator ($target)"
+  assert_contains "$out" "2 ^ 3 ^ 2  =>  = 512.0" "calculator ($target)"
+  assert_contains "$out" "clamp(quadratic_disc(1, -5, 6), 0, 10)  =>  = 1.0" "calculator ($target)"
+  assert_contains "$out" "10 / (5 - 5)  =>  ERROR: Division by zero" "calculator ($target)"
+done
+"$GEKKO" build --root "$ROOT/calculator" --target native --out "$TMP_DIR/calculator.exe"
+calc_cli_out="$("$TMP_DIR/calculator.exe" "fn hypot(a, b) = sqrt(a^2 + b^2)" "let c = hypot(3, 4); c * 10")"
+assert_contains "$calc_cli_out" "defined hypot/2" "calculator (native cli fn)"
+assert_contains "$calc_cli_out" "c = 5.0" "calculator (native cli let)"
+assert_contains "$calc_cli_out" "c * 10  =>  = 50.0" "calculator (native cli eval)"
+
+echo "All 7 gekko examples passed."

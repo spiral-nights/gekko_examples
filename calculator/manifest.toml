@@ -1,0 +1,16 @@
+# Do not manually edit this file, it is managed by Gleam.
+#
+# This file locks the dependency versions used, to make your build
+# deterministic and to prevent unexpected versions from being included
+# in your application.
+#
+# You should check this file into your source control repository.
+
+packages = [
+  { name = "gleam_stdlib", version = "1.1.0", build_tools = ["gleam"], requirements = [], source = "git", repo = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", commit = "6169ad96218ac68ba2fbd09ad11a378c18708b4e" },
+  { name = "party", version = "1.0.6-a", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "party", source = "hex", outer_checksum = "05CB735A341DC38C08AE6F2DAD1829348523969A394D0CB4DD59F5E2AA2F3B5C" },
+]
+
+[requirements]
+gleam_stdlib = { git = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", ref = "main" }
+party = { version = ">= 1.0.0 and < 2.0.0" }

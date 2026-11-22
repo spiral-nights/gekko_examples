@@ -20,10 +20,11 @@ Each example directory includes its own `README.md` with setup, generation comma
 | **MoonBit FFI** | Local `moonbit/` package and `moonbitlang/core/math` via `@external` | [`moonbit_ffi/README.md`](./moonbit_ffi/README.md) |
 | **File I/O** | Reading/writing files via `moonbit/moon.mod` (`moonbitlang/x/fs`) + `gekko moonbit bind` | [`file_io/README.md`](./file_io/README.md) |
 | **Fibonacci CLI** | Reading CLI arguments via `moonbitlang/core/env` + native `gekko build --target native` | [`fibonacci_cli/README.md`](./fibonacci_cli/README.md) |
+| **Calculator** | Pure-Gleam AST/evaluator with `party` parser combinators from Hex (no custom FFI) | [`calculator/README.md`](./calculator/README.md) |
 
 ## Verification
 
-Run the end-to-end verification script across all six examples:
+Run the end-to-end verification script across all seven examples:
 
 ```sh
 ./scripts/test_all.sh
