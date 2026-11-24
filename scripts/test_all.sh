@@ -16,6 +16,14 @@ if [ -n "${GEKKO_JSON_DIR:-}" ]; then
   JSON_ABS="$(cd "$GEKKO_JSON_DIR" && pwd)"
 fi
 
+if [ -n "$STDLIB_ABS" ] && [ -n "$JSON_ABS" ]; then
+  STAGED_JSON_DEP="$TMP_DIR/staged_deps/gekko_json"
+  mkdir -p "$STAGED_JSON_DEP"
+  (cd "$JSON_ABS" && tar cf - --exclude=build --exclude=manifest.toml .) | (cd "$STAGED_JSON_DEP" && tar xf -)
+  sed -i -E "s|^gekko_stdlib = .*|gekko_stdlib = { path = \"$STDLIB_ABS\" }|" "$STAGED_JSON_DEP/gleam.toml"
+  JSON_ABS="$STAGED_JSON_DEP"
+fi
+
 ensure_deps() {
   local dir="$1"
   if [ ! -d "$dir/build/packages" ]; then
