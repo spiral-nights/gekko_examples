@@ -25,7 +25,7 @@ orbital_station/
 
 ## How It Was Created
 
-No FFI, adapters, or code generation steps were required. This is a pure Gleam project written with standard `gleam` conventions and `gleam.toml` dependencies (using the MoonBit-enabled `gleam_stdlib` and `gleam_json` forks); `gekko` transpiles both the modules under `src/` and the resolved dependencies under `build/packages/` directly into a MoonBit workspace.
+No FFI, adapters, or code generation steps were required. This is a pure Gleam project written with standard `gleam` conventions and `gleam.toml` dependencies (using unmodified upstream `gleam_stdlib` and `gleam_json` paired with the `gekko_stdlib` and `gekko_json` companion shims); `gekko` transpiles both the modules under `src/` and the resolved dependencies under `build/packages/` directly into a MoonBit workspace.
 
 ## How to Run
 

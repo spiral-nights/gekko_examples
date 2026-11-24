@@ -2,5 +2,7 @@ name = "orbital_station"
 version = "0.1.0"
 
 [dependencies]
-gleam_stdlib = { git = "https://github.com/spiral-nights/gekko_gleam_stdlib.git", ref = "main" }
-gleam_json = { git = "https://github.com/spiral-nights/gekko_gleam_json.git", ref = "main" }
+gleam_stdlib = ">= 1.0.0 and < 2.0.0"
+gleam_json = ">= 3.0.0 and < 4.0.0"
+gekko_stdlib = { git = "https://github.com/spiral-nights/gekko_stdlib.git", ref = "main" }
+gekko_json = { git = "https://github.com/spiral-nights/gekko_json.git", ref = "main" }

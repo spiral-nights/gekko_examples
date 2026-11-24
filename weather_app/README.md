@@ -6,7 +6,7 @@ A pure-Gleam JSON decoding example using `gleam/json` and `gleam/dynamic/decode`
 
 - Structured JSON decoding using `gleam/json` and `gleam/dynamic/decode` (`parse_forecast`).
 - Decoding Open-Meteo weather forecast JSON payloads into nested Gleam custom types (`ForecastResponse`, `CurrentUnits`, `CurrentWeather`).
-- Transpiles [`gleam_stdlib`](https://github.com/spiral-nights/gekko_gleam_stdlib) and [`gleam_json`](https://github.com/spiral-nights/gekko_gleam_json) directly, using their bundled `moonbit/` FFI packages.
+- Transpiles unmodified [`gleam_stdlib`](https://hex.pm/packages/gleam_stdlib) and [`gleam_json`](https://hex.pm/packages/gleam_json) paired with the [`gekko_stdlib`](https://github.com/spiral-nights/gekko_stdlib) and [`gekko_json`](https://github.com/spiral-nights/gekko_json) companion shims.
 
 ## Project Layout
 
