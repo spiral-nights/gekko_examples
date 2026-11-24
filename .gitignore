@@ -1,5 +1,7 @@
 build/
+_build/
 dist/
+moon.work
 .mooncakes/
 target/
 *.wasm

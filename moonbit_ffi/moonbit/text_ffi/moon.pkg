@@ -1,0 +1,3 @@
+import {
+  "gekko/gprelude" @gprelude,
+}

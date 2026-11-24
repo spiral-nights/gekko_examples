@@ -7,6 +7,6 @@ gleam_json = ">= 3.0.0 and < 4.0.0"
 gekko_stdlib = { git = "https://github.com/spiral-nights/gekko_stdlib.git", ref = "main" }
 gekko_json = { git = "https://github.com/spiral-nights/gekko_json.git", ref = "main" }
 
-[tools.gekko.shims]
+[tools.gekko.use_shims]
 gleam_stdlib = "gekko_stdlib"
 gleam_json = "gekko_json"
