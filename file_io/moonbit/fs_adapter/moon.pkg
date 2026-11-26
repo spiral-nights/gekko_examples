@@ -1,4 +1,4 @@
 import {
-  "gekko/gprelude" @gprelude,
+  "file_io_mbt/gprelude" @gprelude,
   "moonbitlang/x/fs" @moonbitlang_x_fs,
 }

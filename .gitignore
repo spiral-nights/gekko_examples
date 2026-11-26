@@ -2,6 +2,15 @@ build/
 _build/
 dist/
 moon.work
+*/moon.work
+*/moonbit/gprelude/
+*/patches/moon.mod
+*/patches/gprelude/
+*/patches/_build/
+*/patches/.mooncakes/
+*/patches/**/moon.pkg
+*/patches/**/*.g.mbt
+pkg.generated.mbti
 .mooncakes/
 target/
 *.wasm
