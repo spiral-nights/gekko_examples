@@ -1,0 +1,11 @@
+name = "simplifile_shim"
+version = "0.1.0"
+
+[dependencies]
+gleam_stdlib = ">= 1.0.0 and < 2.0.0"
+gekko_stdlib = { git = "https://github.com/spiral-nights/gekko_stdlib.git", ref = "main" }
+filepath = ">= 1.0.0 and < 2.0.0"
+simplifile = ">= 2.7.0 and < 3.0.0"
+
+[tools.gekko.use_shims]
+gleam_stdlib = "gekko_stdlib"

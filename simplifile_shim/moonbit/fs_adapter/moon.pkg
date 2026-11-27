@@ -1,0 +1,4 @@
+import {
+  "simplifile_shim_mbt/gprelude" @gprelude,
+  "moonbitlang/x/fs" @moonbitlang_x_fs,
+}

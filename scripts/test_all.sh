@@ -188,4 +188,18 @@ assert_contains "$calc_cli_out" "defined hypot/2" "calculator (native cli fn)"
 assert_contains "$calc_cli_out" "c = 5.0" "calculator (native cli let)"
 assert_contains "$calc_cli_out" "c * 10  =>  = 50.0" "calculator (native cli eval)"
 
-echo "All 7 gekko examples passed."
+echo "=== Verifying simplifile_shim ==="
+prepare_example "simplifile_shim"
+(cd "$EXAMPLE_DIR" && gleam format --check src && gleam check)
+"$GEKKO" check --root "$EXAMPLE_DIR" --out "$TMP_DIR/simplifile_shim" --target wasm
+(cd "$TMP_DIR/simplifile_shim" && moon check --deny-warn --target wasm)
+for target in wasm js; do
+  out="$("$GEKKO" run --root "$EXAMPLE_DIR" --out "$TMP_DIR/simplifile_shim" --target "$target")"
+  assert_contains "$out" "joined=simplifile_demo_tmp/sub/note.txt" "simplifile_shim ($target)"
+  assert_contains "$out" "content=hello gekko" "simplifile_shim ($target)"
+  assert_contains "$out" "entries=note.txt" "simplifile_shim ($target)"
+  assert_contains "$out" "missing_is_err=True" "simplifile_shim ($target)"
+  assert_contains "$out" "cleaned=True" "simplifile_shim ($target)"
+done
+
+echo "All 8 gekko examples passed."
