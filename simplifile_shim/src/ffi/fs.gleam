@@ -23,7 +23,7 @@ pub fn is_file(x: String) -> Result(Bool, String) {
   panic as "Implemented in MoonBit"
 }
 
-/// @external(moonbit, "moonbitlang/x/fs", "path_exists")
+/// @external(moonbit, "fs_adapter", "path_exists")
 pub fn path_exists(x: String) -> Bool {
   let _ = x
   panic as "Implemented in MoonBit"

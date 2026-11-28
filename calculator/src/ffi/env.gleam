@@ -2,7 +2,7 @@
 
 import gleam/option.{type Option}
 
-/// @external_type(moonbit, "moonbitlang/core/builtin", "Map")
+/// @external_type(moonbit, "builtin", "Map")
 pub type Map(t0, t1)
 
 /// @external(moonbit, "env_adapter", "args")
@@ -27,7 +27,7 @@ pub fn get_env_var(x: String) -> Option(String) {
   panic as "Implemented in MoonBit"
 }
 
-/// @external(moonbit, "moonbitlang/core/env", "get_env_vars")
+/// @external(moonbit, "env_adapter", "get_env_vars")
 pub fn get_env_vars() -> Map(String, String) {
   panic as "Implemented in MoonBit"
 }
@@ -43,14 +43,14 @@ pub fn rand(x: Int) -> Option(BitArray) {
   panic as "Implemented in MoonBit"
 }
 
-/// @external(moonbit, "moonbitlang/core/env", "set_env_var")
+/// @external(moonbit, "env_adapter", "set_env_var")
 pub fn set_env_var(arg0: String, arg1: String) -> Nil {
   let _ = arg0
   let _ = arg1
   panic as "Implemented in MoonBit"
 }
 
-/// @external(moonbit, "moonbitlang/core/env", "unset_env_var")
+/// @external(moonbit, "env_adapter", "unset_env_var")
 pub fn unset_env_var(x: String) -> Nil {
   let _ = x
   panic as "Implemented in MoonBit"

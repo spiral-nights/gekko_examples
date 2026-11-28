@@ -7,7 +7,7 @@
 # You should check this file into your source control repository.
 
 packages = [
-  { name = "gekko_stdlib", version = "0.1.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], source = "git", repo = "https://github.com/spiral-nights/gekko_stdlib.git", commit = "d89d8e7de20d7b8a17ec9eb404cf21fad1fdff66" },
+  { name = "gekko_stdlib", version = "0.1.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], source = "git", repo = "https://github.com/spiral-nights/gekko_stdlib.git", commit = "2ad68d41a60189263a7ffb0b7cbba27d1362a633" },
   { name = "gleam_stdlib", version = "1.2.0", build_tools = ["gleam"], requirements = [], otp_app = "gleam_stdlib", source = "hex", outer_checksum = "93D27B978967D61211E06BB1F1062BCF36B6E546F67A575EFA928605F467AF65" },
 ]
 

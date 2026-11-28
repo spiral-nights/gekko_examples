@@ -1,0 +1,18 @@
+name = "gleam_analyzer"
+version = "0.1.0"
+description = "A Gleam static analyzer powered by glance, runnable on Erlang and compiled to native via gekko."
+
+[dependencies]
+gleam_stdlib = ">= 1.0.0 and < 2.0.0"
+gekko_stdlib = { git = "https://github.com/spiral-nights/gekko_stdlib.git", ref = "main" }
+glance = ">= 7.0.0 and < 8.0.0"
+simplifile = ">= 2.7.0 and < 3.0.0"
+filepath = ">= 1.1.2 and < 2.0.0"
+argv = ">= 1.1.0 and < 2.0.0"
+
+[dev-dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+splitter = ">= 1.1.0 and < 2.0.0"
+
+[tools.gekko.use_shims]
+gleam_stdlib = "gekko_stdlib"

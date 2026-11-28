@@ -2,3 +2,5 @@ import {
   "fibonacci_cli/gprelude" @gprelude,
   "moonbitlang/core/env" @moonbitlang_core_env,
 }
+
+warnings = "-alert_visibility"

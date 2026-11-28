@@ -2,6 +2,9 @@
 
 import gleam/option.{type Option}
 
+/// @external_type(moonbit, "moonbitlang/x/fs", "IOError")
+pub type IOError
+
 /// @external(moonbit, "fs_adapter", "create_dir")
 pub fn create_dir(x: String) -> Result(Nil, String) {
   let _ = x
@@ -20,7 +23,7 @@ pub fn is_file(x: String) -> Result(Bool, String) {
   panic as "Implemented in MoonBit"
 }
 
-/// @external(moonbit, "moonbitlang/x/fs", "path_exists")
+/// @external(moonbit, "fs_adapter", "path_exists")
 pub fn path_exists(x: String) -> Bool {
   let _ = x
   panic as "Implemented in MoonBit"
@@ -79,6 +82,19 @@ pub fn write_string_to_file(
   let _ = arg0
   let _ = arg1
   let _ = encoding
+  panic as "Implemented in MoonBit"
+}
+
+/// @external(moonbit, "fs_adapter", "ioerror_ioerror")
+pub fn ioerror_ioerror(arg0: String) -> IOError {
+  let _ = arg0
+  panic as "Implemented in MoonBit"
+}
+
+/// @external(moonbit, "fs_adapter", "match_ioerror")
+pub fn match_ioerror(value: IOError, on_ioerror: fn(String) -> r) -> r {
+  let _ = value
+  let _ = on_ioerror
   panic as "Implemented in MoonBit"
 }
 // Skipped items:

@@ -2,3 +2,5 @@ import {
   "file_io_mbt/gprelude" @gprelude,
   "moonbitlang/x/fs" @moonbitlang_x_fs,
 }
+
+warnings = "-alert_visibility"
